@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 public class Real_Sets_counter {
 	
+	public static class time{
+		
+		String break_time()
+		{
+			System.out.println("휴식 시간을 입력하세요." + "\n분단위로 입력하세요.");
+			Scanner scan = new Scanner(System.in);
+			String time = scan.nextLine();
+			return time;
+		}
+	}
+	
 	public static class user_sets{
 		
 		int sets()
@@ -16,6 +27,9 @@ public class Real_Sets_counter {
 	}
 
 	public static void main(String[] args) {
+		
+		time user_breaktime = new time();
+		String user_input_breaktime = user_breaktime.break_time();
 		
 		
 		user_sets user_input = new user_sets();
@@ -45,7 +59,7 @@ public class Real_Sets_counter {
 				}
 			else if(input.equals(stop))
 			{
-				System.out.println(i + "번째 세트가 종료되었습니다. 휴식시간은 n분이며, " + (user_sets - i) + "개의 세트가 남았습니다.");
+				System.out.println(i + "번째 세트가 종료되었습니다. 휴식시간은 " + user_input_breaktime + "분이며, " + (user_sets - i) + "개의 세트가 남았습니다.");
 			}
 			
 			if(i == user_sets)
